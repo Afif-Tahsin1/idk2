@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mini Blox Fruits</title>
 </head>
+
 <body>
     <!--Body parts
     All element will showen here-->
@@ -24,7 +26,7 @@
         <!--Sell text-->
         <p>Sell a fruits</p>
         <!--sell input-->
-        <input type="text" id="sell", placeholder="Sell a fruits here...">
+        <input type="text" id="sell" , placeholder="Sell a fruits here...">
         <!--Sell Button-->
         <button onclick="sell()">Sell</button>
     </div>
@@ -35,12 +37,37 @@
         let beli = 100;
         //How many roll
         let rolled = 0;
-        //Error text
+        //All fruits list
+        const bloxFruits = [
+            "rocket", "spin", "blade", "spring", "bomb", "smoke", "spike",
+            "flame", "dark", "sand", "ice", "rubber", "eagle", "ghost",
+            "light", "diamond", "quake", "magma", "love", "spider",
+            "sound", "phoenix", "creation", "blizzard", "buddha", "portal",
+            "shadow", "venom", "spirit", "mammonth", "gravity", "trex",
+            "dough", "dough", "gas", "lightning", "tiger", "yeti",
+            "kitsune", "control", "dragon", "dragoneast", "dragonweast"
+        ];
+        //User's fruits list
+        const fruits = [];
+        //Cooldown
+        const cooldown = new Set();
+        //Error fruits text
         const errort = document.getElementById("error");
         //rolled text
         const rolledt = document.getElementById("rolled");
         //sell input
-        const selli = document.getElementById("")
+        const selli = document.getElementById("sell");
+        //all fruits text
+        const allF = document.getElementById("all");
+
+        //Function
+        function roll(){
+            if (cooldown.has("rolled")){
+                return errort.textContent = "Wait!";
+            }
+            
+        }
     </script>
 </body>
+
 </html>

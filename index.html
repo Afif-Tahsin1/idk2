@@ -18,9 +18,11 @@
         <!--error text-->
         <p id="error"></p>
         <!--Roll button-->
-        <button onclick="roll()"></button>
-        <!--Rolled Fruits-->
+        <button onclick="roll()">Roll</button>
+        <!--How many Rolled Fruits-->
         <p id="rolled">0</p>
+        <!--Rolled Fruits-->
+        <p id="rolledf"></p>
         <!--All Fruits-->
         <p id="all"></p>
         <!--Sell text-->
@@ -29,6 +31,7 @@
         <input type="text" id="sell" , placeholder="Sell a fruits here...">
         <!--Sell Button-->
         <button onclick="sell()">Sell</button>
+
     </div>
 
     <!--Javascript-->
@@ -59,12 +62,29 @@
         const selli = document.getElementById("sell");
         //all fruits text
         const allF = document.getElementById("all");
+        //Rolled Fruits text
+        const rolledFT = document.getElementById("rolledf");
 
         //Function
-        function roll(){
-            if (cooldown.has("rolled")){
+        //Roll
+        function roll() {
+            //If cooldown didn't end
+            if (cooldown.has("rolled")) {
+                //return error
                 return errort.textContent = "Wait!";
             }
+            //Checking that if he have less than 25 beli
+            if (beli < 25) {
+                //Return error
+                return errort.textContent = `You need more ${25 - beli} beli to roll!`;
+            }
+            rolled += 1
+            //Random Number
+            const randomN = Math.floor(Math.random() * bloxFruits.length);
+            //Random Fruits
+            const randomF = bloxFruits[randomN];
+            rolledFT.textContent = randomF;
+            rolledt.textContent = rolled;
             
         }
     </script>
